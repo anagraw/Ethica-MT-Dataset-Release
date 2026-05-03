@@ -13,17 +13,17 @@ The dataset includes, for all language pairs in this release:
 
 This package is intended to support reproducibility, comparative analysis across language directions, and model-wise inspection of ethical steering behavior.
 
-Paper reference: [ETHICA-MT: Introducing a Framework and Dataset for Studying Ethical Orientations in LLM-based Machine Translation](https://arxiv.org/abs/2506.10150)
+Paper reference: [ETHICA-MT: Introducing a Framework and Dataset for Studying Ethical Orientations in LLM-based Machine Translation](https://openreview.net/pdf/63d36ab8adcc315a98d1dae1f569aaa98f6fdaf1.pdf)
 
 ## Included files
 - `EthicaMT_official_dataset.xlsx` (primary spreadsheet release)
-- `EthicaMT_official_dataset.csv` (plain-text equivalent)
+- `EthicaMT_official_dataset.csv` (comma-separated export)
+- `EthicaMT_official_dataset_readable.tsv` (recommended plain-text file; tab-separated with escaped line breaks)
 - `model_wise_outputs/` (per-model CSV/XLSX splits)
 
 ## Scope and exclusions
 - Included: scenarios, source texts, and translations across all language pairs in this release.
 - Excluded: prompt files (already documented in the paper).
-- Excluded: LLM-as-Judge ranking/evaluation artifacts (not part of the official released dataset table).
 
 ## Data dictionary
 - `model`: Translation model used to generate translations
@@ -42,6 +42,4 @@ Paper reference: [ETHICA-MT: Introducing a Framework and Dataset for Studying Et
 - `translation_ethic_2_following`: Translation explicitly following ethic_2 purpose
 
 ## Responsible / Ethics Statement
-The paper positions ETHICA-MT as a framework for identifying, measuring, and mitigating ethical bias in machine translation. In line with that framing, this release is intended for research on ethical orientations in translation behavior and for improving accountability in MT systems.
-
-> "This work raises a new and subtle issue about the ethics of machine translation, a topic long examined in human translation yet rarely discussed for machine translations. Earlier machine translation systems were too limited to make such ethical dilemma changes meaningful. However, general-purpose LLMs change this by mediating language at scale and enabling deeper questions about embedded biases and their downstream effects. From this standpoint, our paper offers one of the first systematic studies to identify, quantify, and mitigate these biases in Machine Translation, with practical frameworks and evaluation protocols. By bringing ethical reasoning into a standard task, we aim to ensure that technological progress (Machine Translation, in our case) translates into more ethical and accountable systems."
+Our intention in including harmful language in our benchmark was strictly methodological. Our goal was to study how MT systems handle such content, not to promote or normalize it. The level of explicitness was guided by internal criteria: content had to be strong enough to create a meaningful ethical conflict, but not gratuitously escalated beyond what is typical in real-world discourse. We recognize that prompts capable of eliciting controversial material can be misused. We therefore explicitly discourage reuse of the prompts for non-research purposes.
